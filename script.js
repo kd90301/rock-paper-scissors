@@ -3,6 +3,7 @@
 
 let humanScore = 0;
 let computerScore = 0;
+let roundCount = 5;
 
 function getComputerChoice() {
   // let options = ("rock", "paper", "scissors"); oh, right - this isn't Python
@@ -18,14 +19,13 @@ function getComputerChoice() {
   else {
     computerChoice = "paper";
   }
-  // console.log(computerChoice) 
-  return computerChoice ;
+  return computerChoice;
 }
 
 function getHumanChoice() {
   let humanChoice = prompt("Please select rock, paper or scissors.");
   let caseInsensitiveChoice = humanChoice.toLowerCase();
-  return caseInsensitiveChoice ;
+  return caseInsensitiveChoice;
   // console.log(humanChoice)
 }
 
@@ -65,10 +65,29 @@ function playRound(humanChoice, computerChoice) {
   }
 } 
 
+// function playGame() {
+//   if (roundCount > 0) {
+//     playRound(humanSelection, computerSelection);
+//     roundCount = roundCount - 1;
+//     console.log("next round");
+   
 
-// console.log(computerSelection);
+//   } 
+//   else if (roundCount == 0) {
+//     console.log("Game over")
+//   }
+// }
+
+
+
 // console.log(humanSelection);
-// console.log(humanScore, computerScore)
 
+
+
+// playRound(humanSelection, computerSelection);
 playRound(humanSelection, computerSelection);
+
+console.log(computerSelection);
+console.log(roundCount)
+console.log(humanScore, computerScore)
 
