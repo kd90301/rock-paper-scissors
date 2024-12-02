@@ -38,30 +38,37 @@ function playRound(humanChoice, computerChoice) {
   } 
   else if (humanChoice == "rock" && computerChoice == "paper") {
     console.log("Rock is covered by paper! Computer gets 1 point.");
+    computerScore++;
   }
   else if (humanChoice == "rock" && computerChoice == "scissors") {
     console.log("Rock breaks scissors! You get 1 point.");
+    humanScore++;
   }
   else if (humanChoice == "paper" && computerChoice == "rock") {
     console.log("Paper covers rock! You get 1 point.");
+    humanScore++;
   }
   else if (humanChoice == "paper" && computerChoice == "scissors") {
     console.log("Paper is cut by scissors! Computer gets 1 point.");
+    computerScore++;
   }
   else if (humanChoice == "scissors" && computerChoice == "paper") {
     console.log("Scissors cut paper! You get 1 point");
-  }
+    humanScore++;
+  } 
   else if (humanChoice == "scissors" && computerChoice == "rock") {
     console.log("Scissors are broken by rock! Computer gets 1 point.");
-  }
+    computerScore++;
+  } 
   else {
     console.log("it\'s ... not a tie ...");
   }
-  
 } 
 
 
-console.log(computerSelection);
-console.log(humanSelection);
+// console.log(computerSelection);
+// console.log(humanSelection);
+// console.log(humanScore, computerScore)
 
 playRound(humanSelection, computerSelection);
+
