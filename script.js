@@ -1,21 +1,27 @@
 // console.log("Rock, Paper, Scissors")
 
-function getComputerChoice(){
-  // let options = ("rock", "paper", "scissors");
+function getComputerChoice() {
+  // let options = ("rock", "paper", "scissors"); oh, right - this isn't Python
 
   let randomChoice = Math.random()
   let computerChoice = "";
   if (randomChoice <= .333) {
-    computerChoice = "Rock";
+    computerChoice = "rock";
   }
   else if (randomChoice >= .666) {
-    computerChoice = "Scissors"
+    computerChoice = "scissors"
   }
   else {
-    computerChoice = "Paper"
+    computerChoice = "paper"
   }
-  console.log(computerChoice)
-  
+  // console.log(computerChoice) 
 }
 
-getComputerChoice()
+function getPlayerChoice() {
+  let playerChoice = prompt("Please select rock, paper or scissors. Lowercase answers only.")
+  console.log(playerChoice)
+}
+
+
+getComputerChoice();
+getPlayerChoice();
