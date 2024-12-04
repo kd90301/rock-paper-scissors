@@ -5,7 +5,7 @@ let humanScore = 0;
 let computerScore = 0;
 // let roundCount = 5;
 
-function getComputerChoice() {
+function getComputerChoice() { // get randomized computer choice
 
   let randomChoice = Math.random();
   let computerChoice = "";
@@ -21,14 +21,18 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function getHumanChoice() {
+function getHumanChoice() { // get player's choice via prompt
   let humanChoice = prompt("Please select rock, paper or scissors.");
-  let caseInsensitiveChoice = humanChoice.toLowerCase();
+  let caseInsensitiveChoice = humanChoice.toLowerCase(); // convert to case insensetive 
   return caseInsensitiveChoice;
 }
 
+
+// choices to variables for playRound func parameters
 let computerChoice = getComputerChoice();
 let humanChoice = getHumanChoice();
+
+
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice == computerChoice) {
@@ -59,10 +63,12 @@ function playRound(humanChoice, computerChoice) {
     computerScore++;
   } 
   else {
-    console.log("it\'s ... not a tie ...");
+    console.log("it\'s ... not a tie ... you may have spelled a word wrong .."); 
   }
 } 
 
+
+  // I tried implementing loops, but I couldn't get it to work without bugs 
   function playGame(){
 
     playRound(humanChoice, computerChoice);
@@ -70,17 +76,25 @@ function playRound(humanChoice, computerChoice) {
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
+    console.log(humanScore, computerScore);
+    if (humanScore > computerScore) 
+      { console.log("You won!")
+    } else if (computerScore > humanScore) {
+      console.log("You lost!")
+    } else if (humanScore == computerScore) {
+      console.log("It's a tie!")
+    }
 
   }
   
 
 
-
+playGame();
 
 
 
 // playRound(humanChoice, computerChoice);
-playGame();
+
 
 
 // console.log(computerChoice);
