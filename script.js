@@ -3,10 +3,9 @@
 
 let humanScore = 0;
 let computerScore = 0;
-let roundCount = 5;
+// let roundCount = 5;
 
 function getComputerChoice() {
-  // let options = ("rock", "paper", "scissors"); oh, right - this isn't Python
 
   let randomChoice = Math.random();
   let computerChoice = "";
@@ -26,11 +25,10 @@ function getHumanChoice() {
   let humanChoice = prompt("Please select rock, paper or scissors.");
   let caseInsensitiveChoice = humanChoice.toLowerCase();
   return caseInsensitiveChoice;
-  // console.log(humanChoice)
 }
 
-const computerSelection = getComputerChoice();
-const humanSelection = getHumanChoice();
+let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice == computerChoice) {
@@ -65,29 +63,26 @@ function playRound(humanChoice, computerChoice) {
   }
 } 
 
-// function playGame() {
-//   if (roundCount > 0) {
-//     playRound(humanSelection, computerSelection);
-//     roundCount = roundCount - 1;
-//     console.log("next round");
-   
+  function playGame(){
 
-//   } 
-//   else if (roundCount == 0) {
-//     console.log("Game over")
-//   }
-// }
+    playRound(humanChoice, computerChoice);
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+
+  }
+  
 
 
 
-// console.log(humanSelection);
 
 
 
-// playRound(humanSelection, computerSelection);
-playRound(humanSelection, computerSelection);
+// playRound(humanChoice, computerChoice);
+playGame();
 
-console.log(computerSelection);
-console.log(roundCount)
-console.log(humanScore, computerScore)
 
+// console.log(computerChoice);
+// console.log(roundCount)
+// console.log(humanScore, computerScore)
