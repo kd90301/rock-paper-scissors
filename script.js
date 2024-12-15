@@ -3,7 +3,21 @@
 
 let humanScore = 0;
 let computerScore = 0;
-// let roundCount = 5;
+
+const buttonContainer = document.querySelector('.buttonContainer');
+const rockButton = document.createElement('button');
+const paperButton = document.createElement('button');
+const scissorsButton = document.createElement('button');
+
+
+rockButton.textContent = 'Rock';
+paperButton.textContent = 'Paper';
+scissorsButton.textContent = 'Scissors';
+
+buttonContainer.appendChild(rockButton);
+buttonContainer.appendChild(paperButton);
+buttonContainer.appendChild(scissorsButton);
+
 
 function getComputerChoice() { // get randomized computer choice
 
@@ -22,7 +36,7 @@ function getComputerChoice() { // get randomized computer choice
 }
 
 function getHumanChoice() { // get player's choice via prompt
-  let humanChoice = prompt("Please select rock, paper or scissors.");
+  // let humanChoice = prompt("Please select rock, paper or scissors.");
   let caseInsensitiveChoice = humanChoice.toLowerCase(); // convert to case insensetive 
   return caseInsensitiveChoice;
 }
@@ -68,14 +82,14 @@ function playRound(humanChoice, computerChoice) {
 } 
 
 
-  // I tried implementing loops, but I couldn't get it to work without bugs 
-  function playGame(){
 
-    playRound(humanChoice, computerChoice);
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
+  function playGame() {
+
+    // playRound(humanChoice, computerChoice);
+    // playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());
+    // playRound(getHumanChoice(), getComputerChoice());
     console.log(humanScore, computerScore);
     if (humanScore > computerScore) 
       { console.log("You won!")
@@ -85,18 +99,10 @@ function playRound(humanChoice, computerChoice) {
       console.log("It's a tie!")
     }
 
-  }
+}
   
 
-
-playGame();
-
-
-
-// playRound(humanChoice, computerChoice);
+// playGame();
 
 
 
-// console.log(computerChoice);
-// console.log(roundCount)
-// console.log(humanScore, computerScore)
