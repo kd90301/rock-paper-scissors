@@ -11,7 +11,8 @@ const scissorsButton = document.createElement('button');
 
 const computerSelection = document.querySelector('.computerSelection');
 const roundOutcome = document.querySelector('.roundOutcome');
-
+const scoreCard = document.querySelector('.scoreCard');
+const gameStatus = document.querySelector('.gameStatus');
 
 let humanChoice = '';
 // choices to variables for playRound func parameters
@@ -121,6 +122,12 @@ function playRound(humanChoice, computerChoice) {
   } 
   else {
     roundOutcome.textContent = "it\'s ... not a tie ... I don\'t know what went wrong .."; 
+  }
+  scoreCard.textContent = `your score is: ${humanScore} || the computer's score is ${computerScore}`;
+  
+  
+  if (humanScore == 5 || computerScore ==5) {
+  gameStatus.textContent = 'Game Over!'
   }
 } 
 
