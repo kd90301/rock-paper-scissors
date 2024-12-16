@@ -9,6 +9,10 @@ const rockButton = document.createElement('button');
 const paperButton = document.createElement('button');
 const scissorsButton = document.createElement('button');
 
+const computerSelection = document.querySelector('.computerSelection');
+const roundOutcome = document.querySelector('.roundOutcome');
+
+
 let humanChoice = '';
 // choices to variables for playRound func parameters
 // let computerChoice = getComputerChoice();
@@ -44,13 +48,16 @@ function choseRock() {
   console.log("you chose rock");
   humanChoice = 'rock';
   let computerChoice = getComputerChoice();
+  computerSelection.textContent = `Computer chose: ${computerChoice}!`;
   playRound(humanChoice, computerChoice);
+
 }
 
 function chosePaper() {
   console.log('you chose paper')
   humanChoice = 'paper';
   let computerChoice = getComputerChoice();
+  computerSelection.textContent = `Computer chose: ${computerChoice}!`;
   playRound(humanChoice, computerChoice);
 }
 
@@ -58,6 +65,7 @@ function choseScissors() {
   console.log('you chose scissors')
   humanChoice = 'scissors';
   let computerChoice = getComputerChoice();
+  computerSelection.textContent = `Computer chose: ${computerChoice}!`;
   playRound(humanChoice, computerChoice);
 }
 
@@ -84,34 +92,35 @@ function playRound(humanChoice, computerChoice) {
   console.log(computerChoice);
 
   if (humanChoice == computerChoice) {
-    console.log("It\'s a tie!");
+    roundOutcome.textContent = "It\'s a tie!";
+    
   } 
   else if (humanChoice == "rock" && computerChoice == "paper") {
-    console.log("Rock is covered by paper! Computer gets 1 point.");
+    roundOutcome.textContent = "Rock is covered by paper! Computer gets 1 point.";
     computerScore++;
   }
   else if (humanChoice == "rock" && computerChoice == "scissors") {
-    console.log("Rock breaks scissors! You get 1 point.");
+    roundOutcome.textContent = "Rock breaks scissors! You get 1 point.";
     humanScore++;
   }
   else if (humanChoice == "paper" && computerChoice == "rock") {
-    console.log("Paper covers rock! You get 1 point.");
+    roundOutcome.textContent = "Paper covers rock! You get 1 point.";
     humanScore++;
   }
   else if (humanChoice == "paper" && computerChoice == "scissors") {
-    console.log("Paper is cut by scissors! Computer gets 1 point.");
+    roundOutcome.textContent = "Paper is cut by scissors! Computer gets 1 point.";
     computerScore++;
   }
   else if (humanChoice == "scissors" && computerChoice == "paper") {
-    console.log("Scissors cut paper! You get 1 point");
+    roundOutcome.textContent = "Scissors cut paper! You get 1 point";
     humanScore++;
   } 
   else if (humanChoice == "scissors" && computerChoice == "rock") {
-    console.log("Scissors are broken by rock! Computer gets 1 point.");
+    roundOutcome.textContent = "Scissors are broken by rock! Computer gets 1 point.";
     computerScore++;
   } 
   else {
-    console.log("it\'s ... not a tie ... you may have spelled a word wrong .."); 
+    roundOutcome.textContent = "it\'s ... not a tie ... I don\'t know what went wrong .."; 
   }
 } 
 
