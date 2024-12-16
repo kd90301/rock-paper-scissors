@@ -11,7 +11,7 @@ const scissorsButton = document.createElement('button');
 
 let humanChoice = '';
 // choices to variables for playRound func parameters
-let computerChoice = getComputerChoice();
+// let computerChoice = getComputerChoice();
 
 
 rockButton.textContent = 'Rock';
@@ -25,7 +25,7 @@ buttonContainer.appendChild(scissorsButton);
 function getComputerChoice() { // get randomized computer choice
 
   let randomChoice = Math.random();
-  let computerChoice = "";
+  let computerChoice = '';
   if (randomChoice <= .333) {
     computerChoice = "rock";
   }
@@ -43,21 +43,21 @@ function getComputerChoice() { // get randomized computer choice
 function choseRock() {
   console.log("you chose rock");
   humanChoice = 'rock';
-  getComputerChoice();
+  let computerChoice = getComputerChoice();
   playRound(humanChoice, computerChoice);
 }
 
 function chosePaper() {
   console.log('you chose paper')
   humanChoice = 'paper';
-  getComputerChoice();
+  let computerChoice = getComputerChoice();
   playRound(humanChoice, computerChoice);
 }
 
 function choseScissors() {
   console.log('you chose scissors')
   humanChoice = 'scissors';
-  getComputerChoice();
+  let computerChoice = getComputerChoice();
   playRound(humanChoice, computerChoice);
 }
 
@@ -82,6 +82,7 @@ scissorsButton.addEventListener('click', choseScissors)
 
 function playRound(humanChoice, computerChoice) {
   console.log(computerChoice);
+
   if (humanChoice == computerChoice) {
     console.log("It\'s a tie!");
   } 
