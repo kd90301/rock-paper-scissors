@@ -9,6 +9,10 @@ const rockButton = document.createElement('button');
 const paperButton = document.createElement('button');
 const scissorsButton = document.createElement('button');
 
+let humanChoice = '';
+// choices to variables for playRound func parameters
+let computerChoice = getComputerChoice();
+
 
 rockButton.textContent = 'Rock';
 paperButton.textContent = 'Paper';
@@ -17,7 +21,6 @@ scissorsButton.textContent = 'Scissors';
 buttonContainer.appendChild(rockButton);
 buttonContainer.appendChild(paperButton);
 buttonContainer.appendChild(scissorsButton);
-
 
 function getComputerChoice() { // get randomized computer choice
 
@@ -35,20 +38,50 @@ function getComputerChoice() { // get randomized computer choice
   return computerChoice;
 }
 
-function getHumanChoice() { // get player's choice via prompt
-  // let humanChoice = prompt("Please select rock, paper or scissors.");
-  let caseInsensitiveChoice = humanChoice.toLowerCase(); // convert to case insensetive 
-  return caseInsensitiveChoice;
+
+
+function choseRock() {
+  console.log("you chose rock");
+  humanChoice = 'rock';
+  getComputerChoice();
+  playRound(humanChoice, computerChoice);
 }
 
+function chosePaper() {
+  console.log('you chose paper')
+  humanChoice = 'paper';
+  getComputerChoice();
+  playRound(humanChoice, computerChoice);
+}
 
-// choices to variables for playRound func parameters
-let computerChoice = getComputerChoice();
-let humanChoice = getHumanChoice();
+function choseScissors() {
+  console.log('you chose scissors')
+  humanChoice = 'scissors';
+  getComputerChoice();
+  playRound(humanChoice, computerChoice);
+}
+
+rockButton.addEventListener('click',choseRock )
+paperButton.addEventListener('click', chosePaper )
+scissorsButton.addEventListener('click', choseScissors)
+
+
+
+
+// function getHumanChoice() { // get player's choice via prompt
+//   // let humanChoice = prompt("Please select rock, paper or scissors.");
+//   let caseInsensitiveChoice = humanChoice.toLowerCase(); // convert to case insensetive 
+//   return caseInsensitiveChoice;
+// }
+
+
+
+
 
 
 
 function playRound(humanChoice, computerChoice) {
+  console.log(computerChoice);
   if (humanChoice == computerChoice) {
     console.log("It\'s a tie!");
   } 
